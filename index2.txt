@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Variables | Learning Notes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f1f5f9;
+            color: #263445;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px #00000010;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #ea580c;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px #0000000d;
+            border-left: 5px solid #2563eb;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #0f766e;
+            margin: 18px 0 10px;
+        }
+
+        .highlight {
+            background: #dbeafe;
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .variable-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .variable {
+            background: #f8fafc;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .variable:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px #00000015;
+        }
+
+        .variable h3 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        .syntax {
+            background: #ecfdf5;
+            color: #047857;
+            padding: 12px;
+            border-radius: 7px;
+            margin-top: 12px;
+            font-family: Consolas, monospace;
+            overflow-wrap: anywhere;
+        }
+
+        pre {
+            background: #172033;
+            color: #dbeafe;
+            padding: 22px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .topic-list li {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f0fdf4;
+            border-radius: 7px;
+        }
+
+        .topic-list li::before {
+            content: "✔ ";
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        .image-section {
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #141e30;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>☕ Java Variables</h1>
+        <p>Learn the fundamentals of Java programming</p>
+    </header>
+
+    <nav>
+        <a href="#about">Introduction</a>
+        <a href="#types">Types</a>
+        <a href="#local">Local</a>
+        <a href="#static">Static</a>
+        <a href="#parameter">Parameter</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Introduction -->
+
+        <section class="card" id="about">
+            <h2>📘 What is a Variable?</h2>
+
+            <p>
+                A <span class="highlight">variable</span> is a named
+                memory location that acts as a container to store
+                data values during program execution.
+            </p>
+
+            <p>
+                Every variable must be declared with a specific
+                data type and a unique name before it can be used.
+            </p>
+        </section>
+
+        <!-- Variable Types -->
+
+        <section class="card" id="types">
+            <h2>🚀 Types of Variables in Java</h2>
+
+            <div class="variable-box">
+
+                <div class="variable" id="local">
+                    <h3>🐒 Local Variable</h3>
+
+                    <p>
+                        A variable declared inside a method,
+                        constructor, or code block.
+                    </p>
+
+                    <div class="syntax">
+                        datatype variableName = value;
+                    </div>
+                </div>
+
+                <div class="variable" id="static">
+                    <h3>🪿 Static Variable</h3>
+
+                    <p>
+                        A variable declared inside a class
+                        using the static keyword. It is shared
+                        among all objects of that class.
+                    </p>
+
+                    <div class="syntax">
+                        static datatype variableName = value;
+                    </div>
+                </div>
+
+                <div class="variable" id="parameter">
+                    <h3>🦥 Parameter Variable</h3>
+
+                    <p>
+                        A variable declared inside a method
+                        or constructor parameter list.
+                    </p>
+
+                    <div class="syntax">
+                        datatype methodName(datatype variableName) { }
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Local Variable Code -->
+
+        <section class="card">
+            <h2>💻 Program 1: Local Variable</h2>
+
+            <p>
+                Local variables are declared inside a method
+                and can only be accessed within their scope.
+            </p>
+
+<pre>
+public class Calculator {
+
+    public void addNumbers() {
+
+        int a = 10;
+        int b = 20;
+
+        int sum = a + b;
+
+        System.out.println("Sum: " + sum);
+    }
+
+    public static void main(String[] args) {
+
+        Calculator calc = new Calculator();
+
+        calc.addNumbers();
+    }
+}
+</pre>
+        </section>
+
+        <!-- Static Variable Code -->
+
+        <section class="card">
+            <h2>💻 Program 2: Static Variable</h2>
+
+            <p>
+                Static variables belong to the class and
+                are shared by all objects of that class.
+            </p>
+
+<pre>
+class Employee {
+
+    String name;
+
+    static int employeeCount = 0;
+
+    public static final String COMPANY_NAME = "TechCorp";
+
+    public Employee(String name) {
+
+        this.name = name;
+
+        employeeCount++;
+    }
+
+    public void displayInfo() {
+
+        System.out.println("Name: " + name);
+
+        System.out.println("Company: " + COMPANY_NAME);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Initial count: " +
+                           Employee.employeeCount);
+
+        Employee emp1 = new Employee("Alice");
+
+        Employee emp2 = new Employee("Bob");
+
+        emp1.displayInfo();
+
+        emp2.displayInfo();
+
+        System.out.println("Total employees: " +
+                           Employee.employeeCount);
+    }
+}
+</pre>
+        </section>
+
+        <!-- Parameter Variable Code -->
+
+        <section class="card">
+            <h2>💻 Program 3: Parameter Variable</h2>
+
+            <p>
+                Parameter variables receive values when
+                a method or constructor is called.
+            </p>
+
+<pre>
+public class Employee {
+
+    static String companyName = "TechCorp";
+
+    String employeeName;
+
+    double salary;
+
+    public void setDetails(String name, double baseSalary) {
+
+        this.employeeName = name;
+
+        this.salary = baseSalary;
+    }
+
+    public void printTotalPay(double bonus) {
+
+        double totalPay = this.salary + bonus;
+
+        System.out.println("Company: " + companyName);
+
+        System.out.println("Employee: " + employeeName);
+
+        System.out.println("Total Pay: " + totalPay);
+    }
+
+    public static void main(String[] args) {
+
+        Employee emp = new Employee();
+
+        emp.setDetails("Alice", 75000.0);
+
+        emp.printTotalPay(5000.0);
+    }
+}
+</pre>
+        </section>
+
+        <!-- Topics Covered -->
+
+        <section class="card">
+            <h2>🎯 Topics Covered</h2>
+
+            <ul class="topic-list">
+                <li>Introduction to Variables</li>
+                <li>Local Variables</li>
+                <li>Static Variables</li>
+                <li>Parameter Variables</li>
+                <li>Variable Declaration and Syntax</li>
+                <li>Java Programs and Examples</li>
+            </ul>
+        </section>
+
+        <!-- Image -->
+
+        <section class="card image-section">
+            <h2>📚 Keep Learning Java!</h2>
+
+            <p>
+                Practice every day to become a better Java developer.
+            </p>
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ngMkpQkCjzaS6EC41ukM_QsusQ2NiULquCs0WgFaNg&s=10"
+                alt="Java Variables Learning">
+        </section>
+
+    </div>
+
+    <footer>
+        <p>☕ Java Learning Notes | Keep Coding, Keep Growing 🚀</p>
+    </footer>
+
+</body>
+</html>
