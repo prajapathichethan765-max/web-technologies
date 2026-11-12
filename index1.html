@@ -1,0 +1,157 @@
+<html>
+
+<title> veriable </title>
+
+<body>
+    <p>
+    <h1> variable </h1>
+    </p>
+    <p>
+       
+
+        A <strong> veriavles </strong> in <mark> is a named memory location that acts as a container to store data
+            values during program
+            execution. </mark>Every variable must be declared with a specific data type and a unique name before it can
+        be used.
+    </p>
+
+    <p>
+    
+ <p title="types of veriable"> 🐁</p>   <h1> types of veriables</h1>
+    <p title="static veriable">🐒</p>
+    <b>Local Variable</b> <br> Inside a method, constructor, or code block.<br>
+    <br><b> syntax of local veriable</b> <br> datatype veriableName = vales;
+
+    </p>
+    <p>
+        <p title="local veriable">🪿</p>
+        <b> static veriable</b> <br> inside class scope and stored in the meta space <br>
+        <br> <b>syntax of static veriable</b> <br> static datatype veriableName = value; <br>
+
+
+    </p>
+    <p>
+        <p title="parameter veriable"> 🦥</p>
+        <b>parameter veriable</b> <br> delecared inside the parameter <br>
+        <br> <b>syntax of parameter veriable</b> <br> datatype methodname(datatypr veriableName){}<br>
+
+    </p>
+
+    <b> code for local veriable</b>
+    <pre>
+        public class Calculator {
+    public void addNumbers() {
+        // 'a', 'b', and 'sum' are local variables
+        int a = 10; 
+        int b = 20;
+        int sum = a + b; 
+        
+        System.out.println("Sum: " + sum); // Outputs: Sum: 30
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.addNumbers();
+        
+        // System.out.println(sum); // ERROR: 'sum' cannot be resolved here
+    }
+}
+<hr>
+        
+    </pre> <br>
+
+    <b> code for static veriable</b>
+    <pre>
+        class Employee {
+    // Instance variable (each object gets its own copy)
+    String name;
+    
+    // Static variable (shared across all objects)
+    static int employeeCount = 0;
+    
+    // Static constant (common convention: public static final)
+    public static final String COMPANY_NAME = "TechCorp";
+
+    // Constructor
+    public Employee(String name) {
+        this.name = name;
+        // Increment the shared static counter every time a new Employee is created
+        employeeCount++; 
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + " | Company: " + COMPANY_NAME);
+    }
+
+    public static void main(String[] args) {
+        // Access static variable before creating any objects
+        System.out.println("Initial count: " + Employee.employeeCount); // Output: 0
+
+        Employee emp1 = new Employee("Alice");
+        Employee emp2 = new Employee("Bob");
+
+        emp1.displayInfo();
+        emp2.displayInfo();
+
+        // Recommended way to access static variables: using the Class Name
+        System.out.println("Total employees: " + Employee.employeeCount); // Output: 2
+    }
+}
+<hr>
+    </pre>
+    <b> code parameter veriable</b>
+    <pre>
+        public class Employee {
+    // 1. Class (Static) Variable: Shared by all Employee objects
+    static String companyName = "TechCorp";
+
+    // 2. Instance Variable: Unique to each Employee object
+    String employeeName;
+    double salary;
+
+    // 3. Parameter Variables: 'name' and 'baseSalary' receive values when called
+    public void setDetails(String name, double baseSalary) {
+        this.employeeName = name;
+        this.salary = baseSalary;
+    }
+
+    // 'bonus' is another Parameter Variable
+    public void printTotalPay(double bonus) {
+        // 4. Local Variable: Exists only inside printTotalPay()
+        double totalPay = this.salary + bonus;
+
+        System.out.println("Company: " + companyName);
+        System.out.println("Employee: " + employeeName);
+        System.out.println("Total Pay: $" + totalPay);
+    }
+
+    public static void main(String[] args) { // 'args' is a parameter variable
+        Employee emp = new Employee();
+        
+        // Passing arguments ("Alice" and 75000.0) into the parameter variables
+        emp.setDetails("Alice", 75000.0);
+        
+        // Passing argument (5000.0) into the 'bonus' parameter
+        emp.printTotalPay(5000.0);
+    }
+}
+<hr>
+    </pre>
+
+    <p>
+        <b>topic coverd</b>
+        <br>
+    <p title="local veriable">🪿 </p> <br>
+    <p title="static veriable">🐒 </p> <br>
+    <p title="parameter veriable">🦥</p>
+
+    </p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ngMkpQkCjzaS6EC41ukM_QsusQ2NiULquCs0WgFaNg&s=10" width="400" height="400"
+        alt="veriable">
+    
+
+</body>
+
+
+
+</html>
